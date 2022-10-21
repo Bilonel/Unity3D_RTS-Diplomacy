@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900a79c6f629a9948a160a62275116f8, type: 3}
+  m_Name: Potato
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 4c2bea63463a9c04a97bb025688587a0, type: 2}
+  PlantedColor: {r: 0, g: 1, b: 0, a: 1}
+  GrowthColor: {r: 0.6886792, g: 0.4554986, b: 0.24363652, a: 1}
+  growTime: 10
+  price: 3

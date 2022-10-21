@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900a79c6f629a9948a160a62275116f8, type: 3}
+  m_Name: Aubergine
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 14df57241c43cce4ab11a8c6a4bcef4f, type: 2}
+  PlantedColor: {r: 0, g: 1, b: 0, a: 1}
+  GrowthColor: {r: 0.5525369, g: 0.31626025, b: 0.6509434, a: 1}
+  growTime: 15
+  price: 8
