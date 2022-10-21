@@ -3,7 +3,7 @@ My First RTS/Diplomacy/CityBuilding Game
 
 CITY BUILDING
 
-![Adsız](https://user-images.githubusercontent.com/88561295/197176040-9a921430-e7e6-4c54-8352-8aa234a754fc.png)
+![Adsız](https://user-images.githubusercontent.com/88561295/197176490-e45d8de1-025b-42b2-a44f-d2e46803ad9f.png)
 
 DIPLOMACY & TRADE
 
