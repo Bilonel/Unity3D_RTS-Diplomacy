@@ -19,21 +19,24 @@ public class Building : MonoBehaviour
     public Vector2 BuildingSize;
     public bool isBuildComplete = true;
     public string type;
+    [SerializeField] GameObject panel;
+    [SerializeField] List<Mesh> levelMeshes = new List<Mesh>();
+
     // Start is called before the first frame update
     void Start()
     {
-        
         grid = GameObject.FindObjectOfType<Grid>();
         SetColor(new Color(0, 1, 0, 0.5f)); // PLACEMENTS INIT COLOR
         if (scale==Vector2.zero) scale = transform.localScale;
 
-        if (BuildMesh == null) return;
+        if (BuildMesh == null) BuildingTime=-1;
         if (Cursor.visible)
         { 
             BuildList.builds.Add(gameObject);
             BuildMesh.SetActive(true);
             Body.SetActive(false);
             isBuildComplete = false;
+            panel = GameObject.Find(type + "Panel");
         } 
     }
 
@@ -42,6 +45,8 @@ public class Building : MonoBehaviour
     {
         checkPlacement();
         checkBuildingProcess();
+        if (Input.GetKeyDown(KeyCode.T))
+            upgradeLevelMesh();
     }
     void checkBuildingProcess()
     {
@@ -56,7 +61,8 @@ public class Building : MonoBehaviour
                 GetComponent<FarmMill>().enabled = true;
             else if (type == "LumberMill")
                 GetComponent<LumberMill>().enabled = true;
-            this.enabled = false;
+            else if (type == "Quarry")
+                GetComponent<Quarry>().enabled = true;
             Destroy(BuildMesh);
         }
     }
@@ -88,5 +94,17 @@ public class Building : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         collisionObjectCount--;
+    }
+    public bool upgradeLevelMesh()
+    {
+        if (levelMeshes.Count < 1) return false;
+        Body.GetComponent<MeshFilter>().mesh = levelMeshes[0];
+        levelMeshes.RemoveAt(0);
+        return true;
+    }
+    private void OnMouseUp()
+    {
+        if (Body.activeSelf)
+            panel.SetActive(true);
     }
 }
